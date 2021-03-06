@@ -11,7 +11,7 @@ class ObstacleMap:
 
     @staticmethod
     # check if it is an obstacle
-    def is_obstacle(self, row, col):
+    def is_obstacle(row, col):
         def check_grad(a1, b1, a2, b2):
             return ((row - b1) * (a2 - a1)) - ((b2 - b1) * (col - a1))
 
