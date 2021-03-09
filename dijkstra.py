@@ -122,8 +122,8 @@ def animation(start, goal, explored_map, path, file_dir):
 
     out.release()
 
- def is_valid(currRow, currCol):
-        return 1 <= currRow <= 300 and 1 <= currCol <= 400
+def is_valid(currRow, currCol):
+    return 1 <= currRow <= 300 and 1 <= currCol <= 400
 
 def main():
     start_row = int(input("Enter the row coordinate for start node (between 1 and 300) : "))
