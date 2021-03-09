@@ -122,12 +122,19 @@ def animation(start, goal, explored_map, path, file_dir):
 
     out.release()
 
+ def is_valid(currRow, currCol):
+        return 1 <= currRow <= 300 and 1 <= currCol <= 400
 
 def main():
-    start = (100, 200)
-    goal = (290, 150)
-    explored_map, path = dijkstra(start[0], start[1], goal[0], goal[1])
-    animation(start, goal, explored_map, path, "./dijkstra.avi")
+    start_row = int(input("Enter the row coordinate for start node (between 1 and 300) : "))
+    start_col = int(input("Enter the column coordinate for start node (between 1 and 400) : "))
+    goal_row = int(input("Enter the row coordinate for goal node (between 1 and 300) : "))
+    goal_col = int(input("Enter the column coordinate for goal node (between 1 and 400) : "))
+    start = (start_row, start_col)
+    goal = (goal_row, goal_col)
+    if is_valid(start[0], start[1]) and is_valid(goal[0], goal[1]):
+        explored_map, path = dijkstra(start[0], start[1], goal[0], goal[1])
+        animation(start, goal, explored_map, path, "./dijkstra.avi")
 
 
 if __name__ == '__main__':
